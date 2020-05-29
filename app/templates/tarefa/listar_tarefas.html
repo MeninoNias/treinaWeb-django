@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h3>Listar Tarefas</h3>
+
+    {% for tarefa in tarefas %}
+
+    <div class="card mb-3">
+        <div class="card-header">
+           {{tarefa.titulo}} - {{ tarefa.data_expiracao|date:'d/m/Y' }}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Prioridade: {{tarefa.get_prioridade_display}}</h5>
+            <p class="card-text">{{tarefa.descricao}}</p>
+            <hr>
+            <a href="{% url 'app:gerenciador:tarefa:atualizar_tarefa' tarefa.id %}"><input type="button" class="btn btn-primary btn-sm mb-3" value="Alterar Tarefa"></a>
+            <a href="{% url 'app:gerenciador:tarefa:remover_tarefa' tarefa.id %}"><input type="button" class="btn btn-primary btn-sm mb-3" value="Remover Tarefa"></a>
+        </div>
+    </div>
+
+    {% endfor %}
+
+    <a href="{% url 'app:gerenciador:tarefa:cadastrar_tarefa' %}"><input type="button" class="btn btn-primary mb-3" value="Cadastrar Tarefa"></a>
+
+{% endblock %}

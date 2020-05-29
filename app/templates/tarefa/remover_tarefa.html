@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h3>Remover Tarefas</h3>
+
+    <div class="card mb-3">
+        <div class="card-header">
+           Tem certeza que deseja remover a tarefa {{tarefa.titulo}}?
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Prioridade: {{tarefa.get_prioridade_display}}</h5>
+            <p class="card-text">{{tarefa.descricao}}</p>
+            <hr>
+            <form method="post">
+                {% csrf_token %}
+                <button class="btn btn-danger" type="submit">Remover</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

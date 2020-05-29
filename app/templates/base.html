@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}"/>
+
+    <title>Gerenciador de Tarefas</title>
+</head>
+
+<body>
+    <header >
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">Gerenciador de Tarefas</a>
+            <a class="nav-item nav-link active" href="{% url 'app:gerenciador:tarefa:listar_tarefas' %}">HOME</a>
+
+        </nav>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
