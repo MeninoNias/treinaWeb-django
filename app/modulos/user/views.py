@@ -14,3 +14,5 @@ def user_cadastro(request):
         form = UserCreationForm()
 
     return render(request, template, {'form':form})
+
+
