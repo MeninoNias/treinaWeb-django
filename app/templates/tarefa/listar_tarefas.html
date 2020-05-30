@@ -1,7 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
+     {% for message in messages %}
+        {% if message.tags == 'error' %}
+            <div class="alert alert-danger">
+                {{message}}
+            </div>
+        {% else %}
+            <div class="alert alert-success">
+                {{message}}
+            </div>
+        {% endif %}
 
+     {% endfor %}
     <h3>Listar Tarefas</h3>
 
     {% for tarefa in tarefas %}

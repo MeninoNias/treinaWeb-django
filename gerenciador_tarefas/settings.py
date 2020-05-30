@@ -112,6 +112,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Login
+
+LOGIN_URL = 'app:login'
 
 try:
     from .local_db import *

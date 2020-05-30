@@ -29,9 +29,8 @@ def login(request):
 
 
 def logout(request):
-    template = 'usuario/logout'
-
-    return render(request, template)
+    auth.logout(request)
+    return redirect('/login/')
 
 
 def index(request):

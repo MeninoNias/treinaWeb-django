@@ -5,12 +5,14 @@ def cadastrar_tarefa(tarefa):
     Tarefa.objects.create(titulo=tarefa.titulo,
                           descricao=tarefa.descricao,
                           data_expiracao=tarefa.data_expiracao,
-                          prioridade=tarefa.prioridade)
+                          prioridade=tarefa.prioridade,
+                          user=tarefa.usuario)
+
+def listar_tarefas_user(usuario):
+    return Tarefa.objects.filter(user=usuario).all()
 
 def listar_tarefas():
     return Tarefa.objects.all()
-
-
 
 def listar_tarefas_id(id):
     return Tarefa.objects.get(id=id)

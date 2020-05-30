@@ -11,9 +11,13 @@
 <body>
     <header >
         <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="#">Gerenciador de Tarefas</a>
-            <a class="nav-item nav-link active" href="{% url 'app:gerenciador:tarefa:listar_tarefas' %}">HOME</a>
-
+            {%if user.is_authenticated %}
+                <a class="navbar-brand" href="{% url 'app:gerenciador:tarefa:listar_tarefas' %}">Gerenciador de Tarefas</a>
+                <a class="nav-item nav-link active" href="{% url 'app:gerenciador:tarefa:listar_tarefas' %}">HOME</a>
+                <a class="nav-item nav-link active" href="{% url 'app:logout' %}">LOG OUT</a>
+            {% else %}
+                <a class="nav-item nav-link active" href="{% url 'app:login' %}">LOG IN</a>
+            {% endif %}
         </nav>
     </header>
 
