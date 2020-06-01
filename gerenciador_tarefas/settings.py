@@ -24,8 +24,9 @@ SECRET_KEY = '_^w$a)z5y7p!23gg1gvv*#7*)fgyt*hgg-_**y+v+&r@r@ts+5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
+DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -55,7 +56,11 @@ ROOT_URLCONF = 'gerenciador_tarefas.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+
+            os.path.join(BASE_DIR, 'templates'),
+
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -98,7 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Recife'
 
 USE_I18N = True
 
@@ -107,15 +112,23 @@ USE_L10N = True
 USE_TZ = True
 
 
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Login
 
 LOGIN_URL = 'app:login'
 
+try:
+    from .local_db import *
+except:
+    pass
 
 try:
     from .production import *
