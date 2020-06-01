@@ -1,11 +1,11 @@
 # treinaWeb-django
 Sistema Gerenciador de Tarefas com django para fins acadêmicos - Minicurso de Django da TreinaWeb
 
-Executanto Projeto na Web
+<h3>Executanto Projeto na Web</h3>
 
 Link: <a href="https://treina-web-sis-tarefa.herokuapp.com/login/?next=/">GERENCIADOR DE TAREFAS</a>
 
-Executando Projeto DJANGO
+<h3>Executando Projeto DJANGO</h3>
 
 Dependencies:
 
@@ -34,4 +34,4 @@ Run:
     or specify IP:port
     - python manage.py runserver 0.0.0.0:8080
     
-<h1>Em breve mais informações</h1>
+
