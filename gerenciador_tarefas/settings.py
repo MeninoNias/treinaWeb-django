@@ -116,10 +116,6 @@ STATIC_URL = '/static/'
 
 LOGIN_URL = 'app:login'
 
-try:
-    from .local_db import *
-except:
-    pass
 
 try:
     from .production import *
