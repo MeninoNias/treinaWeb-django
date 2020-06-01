@@ -1,5 +1,3 @@
-import django_heroku
+from . import settings
 
 DEBUG = False
-
-django_heroku.settings(locals())
