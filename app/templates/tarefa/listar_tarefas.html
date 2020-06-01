@@ -13,13 +13,17 @@
         {% endif %}
 
      {% endfor %}
-    <h3>Listar Tarefas</h3>
+    <h3 class="mb-3">Listar Tarefas</h3>
 
     {% for tarefa in tarefas %}
 
     <div class="card mb-3">
+
         <div class="card-header">
-           {{tarefa.titulo}} - {{ tarefa.data_expiracao|date:'d/m/Y' }}
+             <div class="d-flex bd-highlight">
+                 <div class="mr-auto bd-highlight">{{tarefa.titulo}}</div>
+                 <div class="bd-highlight">DATA DE EXPIRAÇÃO: {{ tarefa.data_expiracao|date:'d/m/Y' }}</div>
+             </div>
         </div>
         <div class="card-body">
             <h5 class="card-title">Prioridade: {{tarefa.get_prioridade_display}}</h5>
