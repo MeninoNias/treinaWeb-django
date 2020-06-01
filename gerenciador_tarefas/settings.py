@@ -46,6 +46,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'gerenciador_tarefas.urls'
@@ -118,12 +119,21 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Login
 
 LOGIN_URL = 'app:login'
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 try:
     from .local_db import *
