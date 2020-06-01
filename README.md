@@ -3,7 +3,7 @@ Sistema Gerenciador de Tarefas com django para fins acadêmicos - Minicurso de D
 
 Executanto Projeto na Web
 
-<a href="https://treina-web-sis-tarefa.herokuapp.com/login/?next=/">GERENCIADOR DE TAREFAS</a>
+Link: <a href="https://treina-web-sis-tarefa.herokuapp.com/login/?next=/">GERENCIADOR DE TAREFAS</a>
 
 Executando Projeto DJANGO
 
